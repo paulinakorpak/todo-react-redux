@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { FILTER_ALL } from './filters';
+import { FILTER_ALL, filtersMapping } from './filters';
 
 const initialState = {
   items: [],
@@ -24,11 +24,16 @@ export const todoSlice = createSlice({
         return item;
       });
     },
+    setFilter: (state, action) => {
+      state.filter = action.payload;
+    },
   },
 });
 
-export const { addItem, removeItem, toggleCompleted } = todoSlice.actions;
+export const {
+  addItem, removeItem, toggleCompleted, setFilter,
+} = todoSlice.actions;
 
-export const selectItems = (state) => state.todo.items;
+export const selectItems = (state) => state.todo.items.filter(filtersMapping[state.todo.filter]);
 
 export default todoSlice.reducer;
