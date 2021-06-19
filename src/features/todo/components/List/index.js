@@ -9,7 +9,7 @@ function List() {
 
   return (
     <div className="w-100">
-      <ListGroup>
+      <ListGroup data-test="items-list">
         {items.map((item) => <Item key={item.id} item={item} />)}
       </ListGroup>
     </div>

@@ -26,6 +26,7 @@ function Form() {
         type="text"
         placeholder="add new todo"
         className="form-control form-control-color-secondary p-4"
+        data-test="add-item-input"
       />
     </div>
   );

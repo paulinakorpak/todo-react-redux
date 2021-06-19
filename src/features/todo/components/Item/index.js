@@ -20,17 +20,22 @@ function Item({ item }) {
   const className = item.completed ? 'checked text-decoration-line-through' : '';
 
   return (
-    <Element className="todo">
+    <Element
+      className="todo"
+      data-test="item"
+    >
       <Form.Group controlId="formBasicCheckbox" className="d-flex align-items-center">
         <Form.Check
           onClick={handleToggleCompleted}
           type="checkbox"
           label={item.title}
           className={`checkbox flex-grow-1 text-secondary flex-grow-1 ${className}`}
+          data-test="completed-checkbox"
         />
         <BsArchiveFill
           onClick={handleRemove}
           className="icon text-primary"
+          data-test="remove-item"
         />
       </Form.Group>
     </Element>

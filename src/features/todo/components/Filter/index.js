@@ -19,6 +19,7 @@ function Filter() {
           onClick={handleSetFilter}
           variant="link text-decoration-none"
           data-filter="All"
+          data-test="filter-all"
         >
           All
         </Button>
@@ -26,6 +27,7 @@ function Filter() {
           onClick={handleSetFilter}
           variant="link text-decoration-none"
           data-filter="Active"
+          data-test="filter-active"
         >
           Active
         </Button>
@@ -33,6 +35,7 @@ function Filter() {
           onClick={handleSetFilter}
           variant="link text-decoration-none"
           data-filter="Done"
+          data-test="filter-done"
         >
           Done
         </Button>
